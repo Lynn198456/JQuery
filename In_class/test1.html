@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal fade" id="modal01" tabindex="-1" role="dialog" aria-labelledby="modal01Label" aria-hidden="true" data-bs-backdrop="static"> 
+
+  <div class="modal-dialog" role="document"> 
+
+    <div class="modal-content"> 
+
+      <div class="modal-header"> 
+
+      </div> 
+
+      <div class="modal-body"> 
+
+      </div> 
+
+      <div class="modal-footer"> 
+
+      </div> 
+
+    </div> 
+
+  </div> 
+
+</div> 
+    <h2>User List</h2>
+    <table id="userTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Topics</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- User rows will be appended here -->
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            // Sample user data
+            const users = [
+                { username: 'john_doe', email: ''},
+                { username: 'jane_smith', email: ''},
+                { username: 'alice_jones', email: ''}
+            ];
+            // Function to populate the user table
+            function populateUserTable() { 
+                const tbody = $('#userTable tbody');
+                tbody.empty(); // Clear existing rows
+                users.forEach(user => {
+                    const row = `<tr>
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>${user.topics || ''}</td>
+                    </tr>`;
+                    tbody.append(row);
+                });
+            }
+            populateUserTable();
+        });
+    </script>
+    <div class="modal fade" id="modal01" tabindex="-1" role="dialog" aria-labelledby="modal01Label" aria-hidden="true" data-bs-backdrop="static"> 
+
+  <div class="modal-dialog" role="document"> 
+
+    <div class="modal-content"> 
+
+      <div class="modal-body"> 
+
+<div class="d-flex flex-column justify-content-center align-items-center"> 
+
+<div class="flex"> 
+
+Welcome to the lonely body dialog!! 
+
+</div> 
+
+<button class="flex btn btn-primary mt-3">Close</button> 
+
+</div> 
+
+      </div> 
+
+    </div> 
+
+  </div> 
+
+</div> 
+
+</body>
+</html>
